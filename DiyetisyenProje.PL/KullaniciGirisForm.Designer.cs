@@ -47,7 +47,7 @@
             this.lblListeAd = new System.Windows.Forms.Label();
             this.lblTopKalori = new System.Windows.Forms.Label();
             this.btnListeBitir = new System.Windows.Forms.Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.llVucutKitleEndeksi = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,17 +280,18 @@
             this.btnListeBitir.UseVisualStyleBackColor = false;
             this.btnListeBitir.Click += new System.EventHandler(this.btnListeBitir_Click);
             // 
-            // linkLabel2
+            // llVucutKitleEndeksi
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.linkLabel2.Location = new System.Drawing.Point(12, 463);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(16, 20);
-            this.linkLabel2.TabIndex = 28;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "?";
+            this.llVucutKitleEndeksi.AutoSize = true;
+            this.llVucutKitleEndeksi.BackColor = System.Drawing.Color.Transparent;
+            this.llVucutKitleEndeksi.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.llVucutKitleEndeksi.Location = new System.Drawing.Point(12, 463);
+            this.llVucutKitleEndeksi.Name = "llVucutKitleEndeksi";
+            this.llVucutKitleEndeksi.Size = new System.Drawing.Size(16, 20);
+            this.llVucutKitleEndeksi.TabIndex = 28;
+            this.llVucutKitleEndeksi.TabStop = true;
+            this.llVucutKitleEndeksi.Text = "?";
+            this.llVucutKitleEndeksi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llVucutKitleEndeksi_LinkClicked);
             // 
             // KullaniciGirisForm
             // 
@@ -299,7 +300,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1091, 702);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.llVucutKitleEndeksi);
             this.Controls.Add(this.btnListeBitir);
             this.Controls.Add(this.lblTopKalori);
             this.Controls.Add(this.lblListeAd);
@@ -348,6 +349,6 @@
         private Label lblListeAd;
         private Label lblTopKalori;
         private Button btnListeBitir;
-        private LinkLabel linkLabel2;
+        private LinkLabel llVucutKitleEndeksi;
     }
 }

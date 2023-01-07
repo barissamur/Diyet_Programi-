@@ -57,6 +57,7 @@
             this.btnTemizle = new System.Windows.Forms.Button();
             this.chcKadin = new System.Windows.Forms.RadioButton();
             this.chcErkek = new System.Windows.Forms.RadioButton();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -278,6 +279,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtSifre);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.lblKullaniciKontrol);
@@ -374,6 +376,18 @@
             this.chcErkek.Text = "Erkek";
             this.chcErkek.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label12.Location = new System.Drawing.Point(604, 406);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(160, 19);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "(Cm cinsinden giriniz)";
+            // 
             // KayitOlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -423,5 +437,6 @@
         private Label lblKullaniciKontrol;
         private TextBox txtSifre;
         private Label label11;
+        private Label label12;
     }
 }

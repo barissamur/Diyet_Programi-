@@ -26,28 +26,27 @@ namespace DiyetisyenProje.PL.Entities
 
         public double YagOrani()
         {
-            if (Cinsiyet == "Erkek")
-                return 495 / (1.0324 - 0.19077 * Math.Log10(BelCevresi - BoyunCevresi) + 0.15456 * Math.Log10(Boy)) - 450;
-
-            else
-                return 495 / (1.29579 - 0.35004 * Math.Log10(BelCevresi + KalcaCevresi - BoyunCevresi) + 0.22100 * Math.Log10(Boy)) - 450;
+            return (BoyunCevresi + BelCevresi + KalcaCevresi) / (Boy / Kilo) / 8;
         }
 
         public string VucutKitleEndeksi()
         {
-            double vke = Kilo / Math.Pow(Boy, 2);
+            double vke = Kilo / Math.Pow((Boy / 100), 2);
 
             if (vke < 18.9)
                 return "Zayıf";
 
-            else if (vke < 24.9)
+            else if (vke < 27)
                 return "Normal";
 
             else if (vke < 29.9)
                 return "Şişman";
 
-            else
+            else if (vke < 35.0)
                 return "Obez";
+
+            else
+                return " Aşırı Obez";
         }
         public int Yas()
         {

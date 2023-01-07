@@ -98,7 +98,7 @@ namespace DiyetisyenProje.PL
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             BesinListeForm besinListeForm = new BesinListeForm(_db, _girenKullanici);
-            besinListeForm.ShowDialog(); 
+            besinListeForm.ShowDialog();
         }
 
         private void btnListeBitir_Click(object sender, EventArgs e)
@@ -137,6 +137,12 @@ namespace DiyetisyenProje.PL
         {
             YemekCesidiForm yemekCesidiForm = new YemekCesidiForm(_db);
             yemekCesidiForm.ShowDialog();
+        }
+
+        private void llVucutKitleEndeksi_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            VucutKitleEndeksiForm vkeForm = new VucutKitleEndeksiForm();
+            vkeForm.ShowDialog();
         }
     }
 }
