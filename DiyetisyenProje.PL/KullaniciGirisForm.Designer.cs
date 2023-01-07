@@ -131,7 +131,8 @@
             // 
             this.lblTarih.BackColor = System.Drawing.Color.Transparent;
             this.lblTarih.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTarih.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTarih.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTarih.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblTarih.Location = new System.Drawing.Point(342, 71);
             this.lblTarih.Name = "lblTarih";
             this.lblTarih.Size = new System.Drawing.Size(385, 47);
@@ -245,7 +246,8 @@
             // 
             this.lblListeAd.BackColor = System.Drawing.Color.Transparent;
             this.lblListeAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblListeAd.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblListeAd.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblListeAd.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblListeAd.Location = new System.Drawing.Point(342, 130);
             this.lblListeAd.Name = "lblListeAd";
             this.lblListeAd.Size = new System.Drawing.Size(385, 47);
@@ -317,7 +319,7 @@
             this.Controls.Add(this.lblAdSoyad);
             this.Controls.Add(this.label1);
             this.Name = "KullaniciGirisForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KullaniciGirisForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

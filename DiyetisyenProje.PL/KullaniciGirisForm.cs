@@ -26,7 +26,7 @@ namespace DiyetisyenProje.PL
         {
             InitializeComponent();
             _db=db;
-            lblTopKalori.Text = "Toplam Kalor : ";
+            lblTopKalori.Text = "Toplam Kalori : ";
             _girenKullanici=girenKullanici;
 
             GirenKullanici = db.Kullanicilar.FirstOrDefault(x => x.KullaniciAdi.Contains(girenKullanici));
@@ -70,7 +70,7 @@ namespace DiyetisyenProje.PL
 
             if (listelerimForm.DialogResult == DialogResult.Cancel)
             {
-                lblTopKalori.Text = "Toplam Kalor : ";
+                lblTopKalori.Text = "Toplam Kalori : ";
                 lboxListem.Items.Clear();
                 lblListeAd.Text = "Liste Adı : ";
                 if (GirenKullanici.ListeId != 0)
@@ -98,7 +98,7 @@ namespace DiyetisyenProje.PL
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             BesinListeForm besinListeForm = new BesinListeForm(_db, _girenKullanici);
-            besinListeForm.ShowDialog();
+            besinListeForm.ShowDialog(); 
         }
 
         private void btnListeBitir_Click(object sender, EventArgs e)
@@ -117,6 +117,7 @@ namespace DiyetisyenProje.PL
                 ListeId = listeAd.Id,
                 BitisTarihi = DateTime.Now,
             };
+
             GirenKullanici.ListeId = 0;
             _db.BitenListeler.Add(bitenListe);
             _db.SaveChanges();

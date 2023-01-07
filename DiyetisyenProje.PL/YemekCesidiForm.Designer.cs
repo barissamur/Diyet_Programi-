@@ -102,6 +102,7 @@
             this.Controls.Add(this.lblEnCokBesin);
             this.Controls.Add(this.dgvEnCokBesin);
             this.Name = "YemekCesidiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YemekCesidiForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnCokBesin)).EndInit();
             this.ResumeLayout(false);
