@@ -62,7 +62,7 @@ namespace DiyetisyenProje.PL
             lblKullaniciAdi.Text = GirenKullanici.KullaniciAdi;
             lblCinsiyet.Text =  "Cinsiyet : "  +  GirenKullanici.Cinsiyet;
             lblYas.Text = "Yaş : "  +  GirenKullanici.Yas();
-            lblBoy.Text = "Boy : "  +  GirenKullanici.Boy.ToString("n2");
+            lblBoy.Text = "Boy : "  +  GirenKullanici.Boy.ToString();
             lblKilo.Text = "Kilo : "  +  GirenKullanici.Kilo;
             lblVKE.Text = "Vücut Kitle Endeksi : "  +  GirenKullanici.VucutKitleEndeksi();
             lblYagOrani.Text = "Yağ oranı : "  +  GirenKullanici.YagOrani().ToString("n2");
@@ -165,7 +165,7 @@ namespace DiyetisyenProje.PL
                 lblKullaniciAdi.Text = GirenKullanici.KullaniciAdi;
                 lblCinsiyet.Text =  "Cinsiyet : "  +  GirenKullanici.Cinsiyet;
                 lblYas.Text = "Yaş : "  +  GirenKullanici.Yas();
-                lblBoy.Text = "Boy : "  +  GirenKullanici.Boy.ToString("n2");
+                lblBoy.Text = "Boy : "  +  GirenKullanici.Boy.ToString();
                 lblKilo.Text = "Kilo : "  +  GirenKullanici.Kilo;
                 lblVKE.Text = "Vücut Kitle Endeksi : "  +  GirenKullanici.VucutKitleEndeksi();
                 lblYagOrani.Text = "Yağ oranı : "  +  GirenKullanici.YagOrani().ToString("n2");

@@ -122,11 +122,12 @@
             // 
             this.lboxListem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lboxListem.DisplayMember = "ListeAdi";
+            this.lboxListem.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lboxListem.FormattingEnabled = true;
-            this.lboxListem.ItemHeight = 20;
+            this.lboxListem.ItemHeight = 23;
             this.lboxListem.Location = new System.Drawing.Point(342, 193);
             this.lboxListem.Name = "lboxListem";
-            this.lboxListem.Size = new System.Drawing.Size(385, 384);
+            this.lboxListem.Size = new System.Drawing.Size(385, 372);
             this.lboxListem.TabIndex = 13;
             // 
             // lblTarih

@@ -699,7 +699,7 @@ namespace DiyetisyenProje.PL.Entities
                 Cinsiyet = "Erkek",
                 Kilo = 80.0,
                 DogumTarihi = new DateTime(1992, 07, 17),
-                Boy = 1.90,
+                Boy = 190,
                 BoyunCevresi = 34.0,
                 KalcaCevresi = 88.0
             };
@@ -716,7 +716,7 @@ namespace DiyetisyenProje.PL.Entities
                 Cinsiyet = "Kadın",
                 Kilo = 58.0,
                 DogumTarihi = new DateTime(1995, 02, 17),
-                Boy = 1.70,
+                Boy = 170,
                 BoyunCevresi = 30.0,
                 KalcaCevresi = 84.0
             };

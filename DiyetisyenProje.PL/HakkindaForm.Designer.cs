@@ -102,12 +102,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(83, 262);
+            this.label5.Location = new System.Drawing.Point(261, 262);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(939, 23);
+            this.label5.Size = new System.Drawing.Size(582, 23);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Biz de bu artışa bir dur demek için; Yapay Zeka Desteği ile Uzman Diyetisyen Kadr" +
-    "omuzu bir araya getirerek yine tek tık ile ";
+            this.label5.Text = "Biz de bu artışa bir dur demek için; Yapay Zeka Desteği sayesinde tek tık ile ";
             // 
             // label6
             // 
@@ -140,12 +139,11 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(96, 385);
+            this.label8.Location = new System.Drawing.Point(317, 385);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(913, 23);
+            this.label8.Size = new System.Drawing.Size(471, 23);
             this.label8.TabIndex = 11;
-            this.label8.Text = "uzman diyetisyen kadromuz diyetinizi profilinize tanımlıyor. (Diyetiniz aynı zama" +
-    "nda mail adresinize de yollanmaktadır.)";
+            this.label8.Text = "kendi belirlediğiniz diyet programını ana sayfanıza tanımlıyor";
             // 
             // label10
             // 
