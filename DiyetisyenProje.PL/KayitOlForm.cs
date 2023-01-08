@@ -137,7 +137,7 @@ namespace DiyetisyenProje.PL
             }
         }
 
-        private bool KullaniciAdiKontrol(string kullaniciAdi)
+        public bool KullaniciAdiKontrol(string kullaniciAdi)
         {
             bool kullaniciKontrol = _db.Kullanicilar.Any(x => x.KullaniciAdi == kullaniciAdi);
             bool adminKontrol = _db.Adminler.Any(y => y.KullaniciAdi == kullaniciAdi);
@@ -147,7 +147,6 @@ namespace DiyetisyenProje.PL
 
             else
                 return false;
-
         }
 
 

@@ -73,7 +73,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtKullaniciAd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtKullaniciId = new System.Windows.Forms.TextBox();
+            this.txtSifre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvKullanicilar = new System.Windows.Forms.DataGridView();
@@ -337,7 +337,7 @@
             this.tpageKullanicilar.Controls.Add(this.label6);
             this.tpageKullanicilar.Controls.Add(this.txtKullaniciAd);
             this.tpageKullanicilar.Controls.Add(this.label7);
-            this.tpageKullanicilar.Controls.Add(this.txtKullaniciId);
+            this.tpageKullanicilar.Controls.Add(this.txtSifre);
             this.tpageKullanicilar.Controls.Add(this.label8);
             this.tpageKullanicilar.Controls.Add(this.label2);
             this.tpageKullanicilar.Controls.Add(this.dgvKullanicilar);
@@ -473,7 +473,7 @@
             // 
             // txtKulAdi
             // 
-            this.txtKulAdi.Location = new System.Drawing.Point(180, 157);
+            this.txtKulAdi.Location = new System.Drawing.Point(177, 111);
             this.txtKulAdi.Name = "txtKulAdi";
             this.txtKulAdi.Size = new System.Drawing.Size(125, 27);
             this.txtKulAdi.TabIndex = 32;
@@ -481,7 +481,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(75, 160);
+            this.label9.Location = new System.Drawing.Point(72, 114);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 20);
             this.label9.TabIndex = 31;
@@ -515,7 +515,7 @@
             // 
             // txtKullaniciSoyad
             // 
-            this.txtKullaniciSoyad.Location = new System.Drawing.Point(180, 112);
+            this.txtKullaniciSoyad.Location = new System.Drawing.Point(177, 66);
             this.txtKullaniciSoyad.Name = "txtKullaniciSoyad";
             this.txtKullaniciSoyad.Size = new System.Drawing.Size(125, 27);
             this.txtKullaniciSoyad.TabIndex = 23;
@@ -523,7 +523,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(117, 116);
+            this.label6.Location = new System.Drawing.Point(114, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 20);
             this.label6.TabIndex = 22;
@@ -531,7 +531,7 @@
             // 
             // txtKullaniciAd
             // 
-            this.txtKullaniciAd.Location = new System.Drawing.Point(180, 67);
+            this.txtKullaniciAd.Location = new System.Drawing.Point(177, 21);
             this.txtKullaniciAd.Name = "txtKullaniciAd";
             this.txtKullaniciAd.Size = new System.Drawing.Size(125, 27);
             this.txtKullaniciAd.TabIndex = 21;
@@ -539,27 +539,27 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(139, 71);
+            this.label7.Location = new System.Drawing.Point(136, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 20);
             this.label7.TabIndex = 20;
             this.label7.Text = "Ad :";
             // 
-            // txtKullaniciId
+            // txtSifre
             // 
-            this.txtKullaniciId.Location = new System.Drawing.Point(180, 22);
-            this.txtKullaniciId.Name = "txtKullaniciId";
-            this.txtKullaniciId.Size = new System.Drawing.Size(125, 27);
-            this.txtKullaniciId.TabIndex = 19;
+            this.txtSifre.Location = new System.Drawing.Point(177, 159);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(125, 27);
+            this.txtSifre.TabIndex = 19;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(143, 25);
+            this.label8.Location = new System.Drawing.Point(125, 162);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 20);
+            this.label8.Size = new System.Drawing.Size(46, 20);
             this.label8.TabIndex = 18;
-            this.label8.Text = "ID :";
+            this.label8.Text = "Şifre :";
             // 
             // label2
             // 
@@ -640,7 +640,7 @@
         private Label label6;
         private TextBox txtKullaniciAd;
         private Label label7;
-        private TextBox txtKullaniciId;
+        private TextBox txtSifre;
         private Label label8;
         private TextBox txtKalcaCevresi;
         private Label label15;

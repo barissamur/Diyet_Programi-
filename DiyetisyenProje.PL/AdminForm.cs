@@ -207,6 +207,7 @@ namespace DiyetisyenProje.PL
                 seciliKullanici.Ad = txtKullaniciAd.Text;
                 seciliKullanici.Soyad = txtKullaniciSoyad.Text;
                 seciliKullanici.KullaniciAdi = txtKulAdi.Text;
+                seciliKullanici.Sifre = txtSifre.Text;
                 seciliKullanici.Cinsiyet = cboCinsiyet.Text;
                 seciliKullanici.Kilo = Convert.ToDouble(txtKilo.Text);
                 seciliKullanici.DogumTarihi = dtpDogumTarihi.Value;
@@ -259,6 +260,7 @@ namespace DiyetisyenProje.PL
             txtKullaniciAd.Text = seciliKullanici.Ad;
             txtKullaniciSoyad.Text = seciliKullanici.Soyad;
             txtKulAdi.Text = seciliKullanici.KullaniciAdi;
+            txtSifre.Text = seciliKullanici.Sifre;
             cboCinsiyet.Text = seciliKullanici.Cinsiyet;
             txtKilo.Text = seciliKullanici.Kilo.ToString();
             dtpDogumTarihi.Value = seciliKullanici.DogumTarihi;

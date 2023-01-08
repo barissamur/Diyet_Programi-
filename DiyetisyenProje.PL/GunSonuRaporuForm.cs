@@ -62,11 +62,10 @@ namespace DiyetisyenProje.PL
                   .Include(x => x.Liste)
                   .Where(x => x.KullaniciId == GirenKullanici.Id && x.BitisTarihi.Day == dtpTarihSec.Value.Day).ToList();
 
+            lboxGecmisListeler.Items.Clear();
+            
             if (liste.Count == 0)
-            {
-                lboxGecmisListeler.Items.Clear();
                 return;
-            }
 
             if (liste.Count > 0)
             {
@@ -93,9 +92,8 @@ namespace DiyetisyenProje.PL
 
                 lboxListeIcerik.Items.Clear();
 
-                Liste seciliListeAd = (Liste)lboxGecmisListeler.SelectedItem;
+                Liste seciliListe = (Liste)lboxGecmisListeler.SelectedItem;
 
-                Liste seciliListe = _db.Listeler.FirstOrDefault(x => x.Id == seciliListeAd.Id);
 
                 var besinler = _db.ListeBesinler
                     .Include(x => x.Liste)

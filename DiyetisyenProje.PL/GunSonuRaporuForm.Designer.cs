@@ -72,7 +72,7 @@
             this.lboxGecmisListeler.ItemHeight = 20;
             this.lboxGecmisListeler.Location = new System.Drawing.Point(12, 191);
             this.lboxGecmisListeler.Name = "lboxGecmisListeler";
-            this.lboxGecmisListeler.Size = new System.Drawing.Size(107, 424);
+            this.lboxGecmisListeler.Size = new System.Drawing.Size(138, 424);
             this.lboxGecmisListeler.TabIndex = 2;
             this.lboxGecmisListeler.SelectedIndexChanged += new System.EventHandler(this.lboxGecmisListeler_SelectedIndexChanged);
             // 
@@ -137,8 +137,8 @@
             // lblKaloriler
             // 
             this.lblKaloriler.AutoSize = true;
-            this.lblKaloriler.BackColor = System.Drawing.Color.Transparent;
-            this.lblKaloriler.Location = new System.Drawing.Point(124, 193);
+            this.lblKaloriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblKaloriler.Location = new System.Drawing.Point(156, 191);
             this.lblKaloriler.Name = "lblKaloriler";
             this.lblKaloriler.Size = new System.Drawing.Size(0, 20);
             this.lblKaloriler.TabIndex = 8;
@@ -147,9 +147,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(261, 336);
+            this.pictureBox1.Location = new System.Drawing.Point(266, 336);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(345, 192);
+            this.pictureBox1.Size = new System.Drawing.Size(340, 192);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;

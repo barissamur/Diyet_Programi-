@@ -48,6 +48,8 @@
             this.lblTopKalori = new System.Windows.Forms.Label();
             this.btnListeBitir = new System.Windows.Forms.Button();
             this.llVucutKitleEndeksi = new System.Windows.Forms.LinkLabel();
+            this.btnBilgiDuzenle = new System.Windows.Forms.Button();
+            this.lblKullaniciAdi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +71,7 @@
             this.lblAdSoyad.BackColor = System.Drawing.Color.Transparent;
             this.lblAdSoyad.Font = new System.Drawing.Font("Segoe UI Black", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAdSoyad.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblAdSoyad.Location = new System.Drawing.Point(13, 244);
+            this.lblAdSoyad.Location = new System.Drawing.Point(-1, 244);
             this.lblAdSoyad.Name = "lblAdSoyad";
             this.lblAdSoyad.Size = new System.Drawing.Size(245, 50);
             this.lblAdSoyad.TabIndex = 2;
@@ -144,73 +146,67 @@
             // 
             this.lblYas.AutoSize = true;
             this.lblYas.BackColor = System.Drawing.Color.Transparent;
-            this.lblYas.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblYas.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblYas.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblYas.Location = new System.Drawing.Point(27, 344);
+            this.lblYas.Location = new System.Drawing.Point(27, 384);
             this.lblYas.Name = "lblYas";
-            this.lblYas.Size = new System.Drawing.Size(58, 28);
+            this.lblYas.Size = new System.Drawing.Size(0, 25);
             this.lblYas.TabIndex = 15;
-            this.lblYas.Text = "Yaş :";
             // 
             // lblBoy
             // 
             this.lblBoy.AutoSize = true;
             this.lblBoy.BackColor = System.Drawing.Color.Transparent;
-            this.lblBoy.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblBoy.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblBoy.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblBoy.Location = new System.Drawing.Point(27, 382);
+            this.lblBoy.Location = new System.Drawing.Point(27, 422);
             this.lblBoy.Name = "lblBoy";
-            this.lblBoy.Size = new System.Drawing.Size(62, 28);
+            this.lblBoy.Size = new System.Drawing.Size(0, 25);
             this.lblBoy.TabIndex = 16;
-            this.lblBoy.Text = "Boy :";
             // 
             // lblVKE
             // 
             this.lblVKE.AutoSize = true;
             this.lblVKE.BackColor = System.Drawing.Color.Transparent;
-            this.lblVKE.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblVKE.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblVKE.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblVKE.Location = new System.Drawing.Point(27, 458);
+            this.lblVKE.Location = new System.Drawing.Point(27, 498);
             this.lblVKE.Name = "lblVKE";
-            this.lblVKE.Size = new System.Drawing.Size(208, 28);
+            this.lblVKE.Size = new System.Drawing.Size(0, 25);
             this.lblVKE.TabIndex = 18;
-            this.lblVKE.Text = "Vicut Kitle Endeksi :";
             // 
             // lblKilo
             // 
             this.lblKilo.AutoSize = true;
             this.lblKilo.BackColor = System.Drawing.Color.Transparent;
-            this.lblKilo.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblKilo.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblKilo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblKilo.Location = new System.Drawing.Point(27, 420);
+            this.lblKilo.Location = new System.Drawing.Point(27, 460);
             this.lblKilo.Name = "lblKilo";
-            this.lblKilo.Size = new System.Drawing.Size(63, 28);
+            this.lblKilo.Size = new System.Drawing.Size(0, 25);
             this.lblKilo.TabIndex = 17;
-            this.lblKilo.Text = "Kilo :";
             // 
             // lblCinsiyet
             // 
             this.lblCinsiyet.AutoSize = true;
             this.lblCinsiyet.BackColor = System.Drawing.Color.Transparent;
-            this.lblCinsiyet.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCinsiyet.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCinsiyet.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblCinsiyet.Location = new System.Drawing.Point(27, 306);
+            this.lblCinsiyet.Location = new System.Drawing.Point(27, 346);
             this.lblCinsiyet.Name = "lblCinsiyet";
-            this.lblCinsiyet.Size = new System.Drawing.Size(102, 28);
+            this.lblCinsiyet.Size = new System.Drawing.Size(0, 25);
             this.lblCinsiyet.TabIndex = 19;
-            this.lblCinsiyet.Text = "Cinsiyet :";
             // 
             // lblYagOrani
             // 
             this.lblYagOrani.AutoSize = true;
             this.lblYagOrani.BackColor = System.Drawing.Color.Transparent;
-            this.lblYagOrani.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblYagOrani.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblYagOrani.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lblYagOrani.Location = new System.Drawing.Point(27, 496);
+            this.lblYagOrani.Location = new System.Drawing.Point(27, 536);
             this.lblYagOrani.Name = "lblYagOrani";
-            this.lblYagOrani.Size = new System.Drawing.Size(121, 28);
+            this.lblYagOrani.Size = new System.Drawing.Size(0, 25);
             this.lblYagOrani.TabIndex = 20;
-            this.lblYagOrani.Text = "Yağ Oranı :";
             // 
             // llGunSonuRaporu
             // 
@@ -293,6 +289,31 @@
             this.llVucutKitleEndeksi.Text = "?";
             this.llVucutKitleEndeksi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llVucutKitleEndeksi_LinkClicked);
             // 
+            // btnBilgiDuzenle
+            // 
+            this.btnBilgiDuzenle.BackColor = System.Drawing.Color.Transparent;
+            this.btnBilgiDuzenle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBilgiDuzenle.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBilgiDuzenle.Location = new System.Drawing.Point(46, 588);
+            this.btnBilgiDuzenle.Name = "btnBilgiDuzenle";
+            this.btnBilgiDuzenle.Size = new System.Drawing.Size(166, 49);
+            this.btnBilgiDuzenle.TabIndex = 29;
+            this.btnBilgiDuzenle.Text = "Bilgilerimi Düzenle";
+            this.btnBilgiDuzenle.UseVisualStyleBackColor = false;
+            this.btnBilgiDuzenle.Click += new System.EventHandler(this.btnBilgiDuzenle_Click);
+            // 
+            // lblKullaniciAdi
+            // 
+            this.lblKullaniciAdi.AutoSize = true;
+            this.lblKullaniciAdi.BackColor = System.Drawing.Color.Transparent;
+            this.lblKullaniciAdi.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblKullaniciAdi.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(84, 303);
+            this.lblKullaniciAdi.Name = "lblKullaniciAdi";
+            this.lblKullaniciAdi.Size = new System.Drawing.Size(20, 25);
+            this.lblKullaniciAdi.TabIndex = 30;
+            this.lblKullaniciAdi.Text = "-";
+            // 
             // KullaniciGirisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -300,6 +321,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1091, 702);
+            this.Controls.Add(this.lblKullaniciAdi);
+            this.Controls.Add(this.btnBilgiDuzenle);
             this.Controls.Add(this.llVucutKitleEndeksi);
             this.Controls.Add(this.btnListeBitir);
             this.Controls.Add(this.lblTopKalori);
@@ -350,5 +373,7 @@
         private Label lblTopKalori;
         private Button btnListeBitir;
         private LinkLabel llVucutKitleEndeksi;
+        private Button btnBilgiDuzenle;
+        private Label lblKullaniciAdi;
     }
 }
