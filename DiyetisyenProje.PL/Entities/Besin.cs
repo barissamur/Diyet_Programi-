@@ -14,6 +14,7 @@ namespace DiyetisyenProje.PL.Entities
         public BesinKategori BesinKategori { get; set; }
         public int BesinKategoriId { get; set; }
         public int Adet { get; set; }
+        public List<Liste> Listeler { get; set; }
 
         public override string ToString()
         {

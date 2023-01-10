@@ -95,6 +95,7 @@
             this.txtSifre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSifre.Location = new System.Drawing.Point(182, 269);
             this.txtSifre.Name = "txtSifre";
+            this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(185, 27);
             this.txtSifre.TabIndex = 2;
             // 

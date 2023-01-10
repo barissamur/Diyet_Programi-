@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DiyetisyenProje.PL.Migrations
 {
-    public partial class ilk : Migration
+    public partial class iki : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -69,7 +69,8 @@ namespace DiyetisyenProje.PL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ListeAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    KullaniciId = table.Column<int>(type: "int", nullable: false)
+                    KullaniciId = table.Column<int>(type: "int", nullable: false),
+                    silindiMi = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -104,19 +105,12 @@ namespace DiyetisyenProje.PL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KullaniciId = table.Column<int>(type: "int", nullable: false),
                     ListeId = table.Column<int>(type: "int", nullable: false),
                     BitisTarihi = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BitenListeler", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BitenListeler_Kullanicilar_KullaniciId",
-                        column: x => x.KullaniciId,
-                        principalTable: "Kullanicilar",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_BitenListeler_Listeler_ListeId",
                         column: x => x.ListeId,
@@ -126,26 +120,24 @@ namespace DiyetisyenProje.PL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ListeBesinler",
+                name: "BesinListe",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ListeId = table.Column<int>(type: "int", nullable: false),
-                    BesinId = table.Column<int>(type: "int", nullable: false)
+                    BesinlerId = table.Column<int>(type: "int", nullable: false),
+                    ListelerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ListeBesinler", x => x.Id);
+                    table.PrimaryKey("PK_BesinListe", x => new { x.BesinlerId, x.ListelerId });
                     table.ForeignKey(
-                        name: "FK_ListeBesinler_Besinler_BesinId",
-                        column: x => x.BesinId,
+                        name: "FK_BesinListe_Besinler_BesinlerId",
+                        column: x => x.BesinlerId,
                         principalTable: "Besinler",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ListeBesinler_Listeler_ListeId",
-                        column: x => x.ListeId,
+                        name: "FK_BesinListe_Listeler_ListelerId",
+                        column: x => x.ListelerId,
                         principalTable: "Listeler",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -157,24 +149,15 @@ namespace DiyetisyenProje.PL.Migrations
                 column: "BesinKategoriId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BitenListeler_KullaniciId",
-                table: "BitenListeler",
-                column: "KullaniciId");
+                name: "IX_BesinListe_ListelerId",
+                table: "BesinListe",
+                column: "ListelerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BitenListeler_ListeId",
                 table: "BitenListeler",
-                column: "ListeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ListeBesinler_BesinId",
-                table: "ListeBesinler",
-                column: "BesinId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ListeBesinler_ListeId",
-                table: "ListeBesinler",
-                column: "ListeId");
+                column: "ListeId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -183,10 +166,10 @@ namespace DiyetisyenProje.PL.Migrations
                 name: "Adminler");
 
             migrationBuilder.DropTable(
-                name: "BitenListeler");
+                name: "BesinListe");
 
             migrationBuilder.DropTable(
-                name: "ListeBesinler");
+                name: "BitenListeler");
 
             migrationBuilder.DropTable(
                 name: "Kullanicilar");

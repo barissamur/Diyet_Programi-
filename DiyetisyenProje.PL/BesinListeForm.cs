@@ -29,12 +29,9 @@ namespace DiyetisyenProje.PL
             _girenKullaniciAd=girenKullaniciAd;
             lboxBesinler.DataSource = _db.Besinler.ToList();
             girenKullanici = _db.Kullanicilar.FirstOrDefault(x => x.KullaniciAdi == _girenKullaniciAd);
-            //cboxKategoriler.DataSource = _db.BesinKategoriler.ToList();
 
             foreach (var item in _db.BesinKategoriler)
-            {
                 cboxKategoriler.Items.Add(item);
-            }
 
             cboxKategoriler.DisplayMember = "Ad";
             cboxKategoriler.Items.Add("Hepsi");
@@ -95,17 +92,11 @@ namespace DiyetisyenProje.PL
             }
 
             Liste liste = new Liste() { ListeAdi = txtListeAd.Text, KullaniciId = girenKullanici.Id };
-   
+
 
             foreach (Besin item in lboxSecilenler.Items)
-            {
-                ListeBesin listeBesin = new ListeBesin()
-                {
-                    Liste = liste,
-                    Besin = item
-                };
-                _db.ListeBesinler.Add(listeBesin);
-            }
+                liste.Besinler.Add(item);
+
 
             _db.Listeler.Add(liste);
             _db.SaveChanges();

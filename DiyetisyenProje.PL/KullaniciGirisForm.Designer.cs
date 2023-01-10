@@ -50,6 +50,7 @@
             this.llVucutKitleEndeksi = new System.Windows.Forms.LinkLabel();
             this.btnBilgiDuzenle = new System.Windows.Forms.Button();
             this.lblKullaniciAdi = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +128,7 @@
             this.lboxListem.ItemHeight = 23;
             this.lboxListem.Location = new System.Drawing.Point(342, 193);
             this.lboxListem.Name = "lboxListem";
-            this.lboxListem.Size = new System.Drawing.Size(385, 372);
+            this.lboxListem.Size = new System.Drawing.Size(385, 326);
             this.lboxListem.TabIndex = 13;
             // 
             // lblTarih
@@ -256,11 +257,11 @@
             // 
             this.lblTopKalori.AutoSize = true;
             this.lblTopKalori.BackColor = System.Drawing.Color.Transparent;
-            this.lblTopKalori.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTopKalori.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTopKalori.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblTopKalori.Location = new System.Drawing.Point(342, 653);
             this.lblTopKalori.Name = "lblTopKalori";
-            this.lblTopKalori.Size = new System.Drawing.Size(160, 28);
+            this.lblTopKalori.Size = new System.Drawing.Size(195, 33);
             this.lblTopKalori.TabIndex = 26;
             this.lblTopKalori.Text = "Toplam Kalori : ";
             // 
@@ -269,7 +270,7 @@
             this.btnListeBitir.BackColor = System.Drawing.Color.Moccasin;
             this.btnListeBitir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListeBitir.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnListeBitir.Location = new System.Drawing.Point(459, 596);
+            this.btnListeBitir.Location = new System.Drawing.Point(459, 589);
             this.btnListeBitir.Name = "btnListeBitir";
             this.btnListeBitir.Size = new System.Drawing.Size(128, 41);
             this.btnListeBitir.TabIndex = 27;
@@ -282,7 +283,7 @@
             this.llVucutKitleEndeksi.AutoSize = true;
             this.llVucutKitleEndeksi.BackColor = System.Drawing.Color.Transparent;
             this.llVucutKitleEndeksi.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.llVucutKitleEndeksi.Location = new System.Drawing.Point(12, 463);
+            this.llVucutKitleEndeksi.Location = new System.Drawing.Point(5, 499);
             this.llVucutKitleEndeksi.Name = "llVucutKitleEndeksi";
             this.llVucutKitleEndeksi.Size = new System.Drawing.Size(16, 20);
             this.llVucutKitleEndeksi.TabIndex = 28;
@@ -315,6 +316,17 @@
             this.lblKullaniciAdi.TabIndex = 30;
             this.lblKullaniciAdi.Text = "-";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(255, 536);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(558, 15);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Seçili liste dışında besin aldıysanız \'Listeyi Bitir\' butonuna tıklamadan \'Listel" +
+    "erim\' sayfasından silebilirsiniz.";
+            // 
             // KullaniciGirisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -322,6 +334,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1091, 702);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblKullaniciAdi);
             this.Controls.Add(this.btnBilgiDuzenle);
             this.Controls.Add(this.llVucutKitleEndeksi);
@@ -376,5 +389,6 @@
         private LinkLabel llVucutKitleEndeksi;
         private Button btnBilgiDuzenle;
         private Label lblKullaniciAdi;
+        private Label label2;
     }
 }

@@ -12,9 +12,7 @@ namespace DiyetisyenProje.PL.Entities
         public DbSet<Besin> Besinler { get; set; }
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Admin> Adminler { get; set; }
-   
         public DbSet<Liste> Listeler { get; set; }
-        public DbSet<ListeBesin> ListeBesinler { get; set; }
         public DbSet<BitenListe> BitenListeler { get; set; }
         public DbSet<BesinKategori> BesinKategoriler { get; set; }
 

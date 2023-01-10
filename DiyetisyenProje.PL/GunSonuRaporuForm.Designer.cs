@@ -37,9 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblGunlukTopKalori = new System.Windows.Forms.Label();
-            this.lblKaloriler = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnListeGeriYukle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -68,11 +68,12 @@
             // lboxGecmisListeler
             // 
             this.lboxGecmisListeler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lboxGecmisListeler.DisplayMember = "Ad";
             this.lboxGecmisListeler.FormattingEnabled = true;
             this.lboxGecmisListeler.ItemHeight = 20;
             this.lboxGecmisListeler.Location = new System.Drawing.Point(12, 191);
             this.lboxGecmisListeler.Name = "lboxGecmisListeler";
-            this.lboxGecmisListeler.Size = new System.Drawing.Size(138, 424);
+            this.lboxGecmisListeler.Size = new System.Drawing.Size(175, 424);
             this.lboxGecmisListeler.TabIndex = 2;
             this.lboxGecmisListeler.SelectedIndexChanged += new System.EventHandler(this.lboxGecmisListeler_SelectedIndexChanged);
             // 
@@ -134,15 +135,6 @@
             this.lblGunlukTopKalori.Text = "0";
             this.lblGunlukTopKalori.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblKaloriler
-            // 
-            this.lblKaloriler.AutoSize = true;
-            this.lblKaloriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblKaloriler.Location = new System.Drawing.Point(156, 191);
-            this.lblKaloriler.Name = "lblKaloriler";
-            this.lblKaloriler.Size = new System.Drawing.Size(0, 20);
-            this.lblKaloriler.TabIndex = 8;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -165,6 +157,16 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // btnListeGeriYukle
+            // 
+            this.btnListeGeriYukle.Location = new System.Drawing.Point(374, 250);
+            this.btnListeGeriYukle.Name = "btnListeGeriYukle";
+            this.btnListeGeriYukle.Size = new System.Drawing.Size(156, 41);
+            this.btnListeGeriYukle.TabIndex = 11;
+            this.btnListeGeriYukle.Text = "Listeyi Geri Yükle";
+            this.btnListeGeriYukle.UseVisualStyleBackColor = true;
+            this.btnListeGeriYukle.Click += new System.EventHandler(this.btnListeGeriYukle_Click);
+            // 
             // GunSonuRaporuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -172,9 +174,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1035, 627);
+            this.Controls.Add(this.btnListeGeriYukle);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblKaloriler);
             this.Controls.Add(this.lblGunlukTopKalori);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -204,8 +206,8 @@
         private Label label4;
         private Label lblGunlukTopKalori;
         private ListBox lboxKaloriler;
-        private Label lblKaloriler;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button btnListeGeriYukle;
     }
 }

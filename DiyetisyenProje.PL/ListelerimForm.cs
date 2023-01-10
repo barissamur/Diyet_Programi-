@@ -24,39 +24,27 @@ namespace DiyetisyenProje.PL
             InitializeComponent();
             _db=db;
             _girenKullanici=girenKullanici;
-            GirenKullanici = db.Kullanicilar.FirstOrDefault(x => x.KullaniciAdi.Contains(girenKullanici));
+            GirenKullanici = db.Kullanicilar.FirstOrDefault(x => x.KullaniciAdi == girenKullanici);
 
-            bool listeler = _db.Listeler.Any(x => x.KullaniciId == GirenKullanici.Id);
 
-            if (listeler)
-                ListeleriGoster();
+            ListeleriGoster();
 
             if (_db.Listeler.Find(GirenKullanici.ListeId) != null)
-            {
                 lblSeciliListe.Text =_db.Listeler.Find(GirenKullanici.ListeId).ListeAdi;
-            }
+
+            lboxListeIcerik.DataSource = null;
+            lboxListelerim.SelectedIndex = -1;
         }
 
 
         private void lboxListelerim_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lboxListeIcerik.Items.Clear();
             if (lboxListelerim.SelectedIndex != -1)
             {
-                Liste listeAdi = (Liste)lboxListelerim.SelectedItem;
+                seciliListe = (Liste)lboxListelerim.SelectedItem;
 
-
-                seciliListe = _db.Listeler
-                    .FirstOrDefault(x => x.Id == listeAdi.Id);
-
-                var listeBesinler = _db.ListeBesinler
-                    .Include(x => x.Besin)
-                    .Include(x => x.Liste)
-                    .Where(x => x.ListeId == seciliListe.Id)
-                    .ToList();
-
-                foreach (var item in listeBesinler)
-                    lboxListeIcerik.Items.Add(item.Besin.Ad);
+                _db.Entry(seciliListe).Collection(s => s.Besinler).Load();
+                lboxListeIcerik.DataSource = seciliListe.Besinler.ToList();
 
                 lblSeciliListe.Text =_db.Listeler.FirstOrDefault(x => x.Id == seciliListe.Id).ListeAdi;
             }
@@ -83,12 +71,14 @@ namespace DiyetisyenProje.PL
             try
             {
                 if (seciliListe == null) return;
-                seciliListe.KullaniciId = 0;
+
+                seciliListe.silindiMi = true;
 
                 if (seciliListe.Id == GirenKullanici.ListeId)
                     GirenKullanici.ListeId = 0;
 
                 _db.SaveChanges();
+
                 lblSeciliListe.Text = "Seçili liste yok";
                 ListeleriGoster();
             }
@@ -103,10 +93,12 @@ namespace DiyetisyenProje.PL
         {
             lboxListelerim.DataSource = null;
             var listeler = _db.Listeler
-                .Where(x => x.KullaniciId == GirenKullanici.Id)
+                .Where(x => x.KullaniciId == GirenKullanici.Id && x.silindiMi == false)
                 .ToList();
 
+            if (listeler == null) return;
             lboxListelerim.DataSource= listeler;
+            lboxListeIcerik.DataSource = null;
         }
         #endregion
     }

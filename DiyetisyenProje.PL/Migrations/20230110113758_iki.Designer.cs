@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiyetisyenProje.PL.Migrations
 {
     [DbContext(typeof(DiyetDbContext))]
-    [Migration("20230106161253_ilk")]
-    partial class ilk
+    [Migration("20230110113758_iki")]
+    partial class iki
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,21 @@ namespace DiyetisyenProje.PL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("BesinListe", b =>
+                {
+                    b.Property<int>("BesinlerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ListelerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BesinlerId", "ListelerId");
+
+                    b.HasIndex("ListelerId");
+
+                    b.ToTable("BesinListe");
+                });
 
             modelBuilder.Entity("DiyetisyenProje.PL.Entities.Admin", b =>
                 {
@@ -109,17 +124,13 @@ namespace DiyetisyenProje.PL.Migrations
                     b.Property<DateTime>("BitisTarihi")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("KullaniciId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ListeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KullaniciId");
-
-                    b.HasIndex("ListeId");
+                    b.HasIndex("ListeId")
+                        .IsUnique();
 
                     b.ToTable("BitenListeler");
                 });
@@ -193,32 +204,27 @@ namespace DiyetisyenProje.PL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("silindiMi")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Listeler");
                 });
 
-            modelBuilder.Entity("DiyetisyenProje.PL.Entities.ListeBesin", b =>
+            modelBuilder.Entity("BesinListe", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasOne("DiyetisyenProje.PL.Entities.Besin", null)
+                        .WithMany()
+                        .HasForeignKey("BesinlerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("BesinId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ListeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BesinId");
-
-                    b.HasIndex("ListeId");
-
-                    b.ToTable("ListeBesinler");
+                    b.HasOne("DiyetisyenProje.PL.Entities.Liste", null)
+                        .WithMany()
+                        .HasForeignKey("ListelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DiyetisyenProje.PL.Entities.Besin", b =>
@@ -234,38 +240,11 @@ namespace DiyetisyenProje.PL.Migrations
 
             modelBuilder.Entity("DiyetisyenProje.PL.Entities.BitenListe", b =>
                 {
-                    b.HasOne("DiyetisyenProje.PL.Entities.Kullanici", "Kullanici")
-                        .WithMany()
-                        .HasForeignKey("KullaniciId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("DiyetisyenProje.PL.Entities.Liste", "Liste")
-                        .WithMany()
-                        .HasForeignKey("ListeId")
+                        .WithOne("BitenListe")
+                        .HasForeignKey("DiyetisyenProje.PL.Entities.BitenListe", "ListeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Kullanici");
-
-                    b.Navigation("Liste");
-                });
-
-            modelBuilder.Entity("DiyetisyenProje.PL.Entities.ListeBesin", b =>
-                {
-                    b.HasOne("DiyetisyenProje.PL.Entities.Besin", "Besin")
-                        .WithMany()
-                        .HasForeignKey("BesinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DiyetisyenProje.PL.Entities.Liste", "Liste")
-                        .WithMany()
-                        .HasForeignKey("ListeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Besin");
 
                     b.Navigation("Liste");
                 });
@@ -273,6 +252,12 @@ namespace DiyetisyenProje.PL.Migrations
             modelBuilder.Entity("DiyetisyenProje.PL.Entities.BesinKategori", b =>
                 {
                     b.Navigation("Besinler");
+                });
+
+            modelBuilder.Entity("DiyetisyenProje.PL.Entities.Liste", b =>
+                {
+                    b.Navigation("BitenListe")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

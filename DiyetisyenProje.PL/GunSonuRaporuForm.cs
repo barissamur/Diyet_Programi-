@@ -17,8 +17,10 @@ namespace DiyetisyenProje.PL
         private readonly DiyetDbContext _db;
         private readonly string _girenKullanici;
         Kullanici GirenKullanici;
-        List<BitenListe> liste;
+        List<BitenListe> bitenListeler;
         double gunlukTopKalori = 0;
+        BitenListe seciliListe;
+        Liste silinenListe;
         public GunSonuRaporuForm(DiyetDbContext db, string girenKullanici)
         {
             InitializeComponent();
@@ -26,60 +28,60 @@ namespace DiyetisyenProje.PL
             _girenKullanici=girenKullanici;
             GirenKullanici = db.Kullanicilar.FirstOrDefault(x => x.KullaniciAdi.Contains(girenKullanici));
 
+            bitenListeler = _db.BitenListeler
+                  .Include(x => x.Liste)
+                  .ThenInclude(x => x.Besinler)
+                  .Where(x => x.Liste.KullaniciId == GirenKullanici.Id && x.BitisTarihi.Day == dtpTarihSec.Value.Day)
+                  .ToList();
 
-            liste = _db.BitenListeler
-                .Include(x => x.Kullanici)
-                .Include(x => x.Liste)
-                .Where(x => x.KullaniciId == GirenKullanici.Id && x.BitisTarihi.Day == dtpTarihSec.Value.Day).ToList();
+            lboxGecmisListeler.DataSource = bitenListeler;
 
-            if (liste.Count > 0)
+            seciliListe = (BitenListe)lboxGecmisListeler.SelectedItem;
+
+            if (seciliListe != null)
+                silinenListe = _db.Listeler.FirstOrDefault(x => x.Id == seciliListe.ListeId);
+
+            if (bitenListeler.Count > 0)
             {
-                foreach (var item in liste)
-                {
-                    var kalori = _db.ListeBesinler
-                   .Include(x => x.Besin)
-                   .Where(x => x.ListeId == item.ListeId)
-                   .Sum(x => x.Besin.Kalori);
-                    lboxGecmisListeler.Items.Add(item.Liste);
-                    lblKaloriler.Text += $"{kalori:n2}\r\n";
+                var kalori = silinenListe.Besinler.Sum(x => x.Kalori);
 
-                    gunlukTopKalori += kalori;
+                foreach (BitenListe item in bitenListeler)
+                {
+                    if (item != null)
+                        gunlukTopKalori += item.Liste.Besinler.Sum(x => x.Kalori);
                 }
+
                 lblGunlukTopKalori.Text = gunlukTopKalori.ToString("n2");
             }
-
         }
 
         private void dtpTarihSec_ValueChanged(object sender, EventArgs e)
         {
             double gunlukTopKalori = 0;
-            lboxListeIcerik.Items.Clear();
+
+            lboxGecmisListeler.DataSource = null;
+            lboxListeIcerik.DataSource = null;
+
             lblGunlukTopKalori.Text = "0";
-            lblKaloriler.Text = "";
 
-            liste = _db.BitenListeler
-                  .Include(x => x.Kullanici)
+            bitenListeler = _db.BitenListeler
                   .Include(x => x.Liste)
-                  .Where(x => x.KullaniciId == GirenKullanici.Id && x.BitisTarihi.Day == dtpTarihSec.Value.Day).ToList();
+                  .ThenInclude(x => x.Besinler)
+                  .Where(x => x.Liste.KullaniciId == GirenKullanici.Id && x.BitisTarihi.Day == dtpTarihSec.Value.Day)
+                  .ToList();
 
-            lboxGecmisListeler.Items.Clear();
-            
-            if (liste.Count == 0)
+
+            if (bitenListeler.Count == 0)
                 return;
 
-            if (liste.Count > 0)
+            if (bitenListeler.Count > 0)
             {
-                foreach (var item in liste)
-                {
-                    var kalori = _db.ListeBesinler
-                   .Include(x => x.Besin)
-                   .Where(x => x.ListeId == item.ListeId)
-                   .Sum(x => x.Besin.Kalori);
-                    lboxGecmisListeler.Items.Add(item.Liste);
-                    lblKaloriler.Text += $"{kalori:n2}\r\n";
+                lboxGecmisListeler.DataSource = bitenListeler;
+                var kalori = silinenListe.Besinler.Sum(x => x.Kalori);
 
-                    gunlukTopKalori += kalori;
-                }
+                foreach (BitenListe item in bitenListeler)
+                    gunlukTopKalori += item.Liste.Besinler.Sum(x => x.Kalori);
+
                 lblGunlukTopKalori.Text = gunlukTopKalori.ToString("n2");
             }
         }
@@ -90,24 +92,34 @@ namespace DiyetisyenProje.PL
             {
                 if (lboxGecmisListeler.SelectedIndex == -1) return;
 
-                lboxListeIcerik.Items.Clear();
+                lboxListeIcerik.DataSource = null;
 
-                Liste seciliListe = (Liste)lboxGecmisListeler.SelectedItem;
+                seciliListe = (BitenListe)lboxGecmisListeler.SelectedItem;
+                silinenListe = _db.Listeler.FirstOrDefault(x => x.Id == seciliListe.ListeId);
 
-
-                var besinler = _db.ListeBesinler
-                    .Include(x => x.Liste)
-                    .Include(x => x.Besin)
-                    .Where(x => x.ListeId == seciliListe.Id).ToList();
-
-                foreach (var item in besinler)
-                    lboxListeIcerik.Items.Add(item.Besin.Ad);
+                _db.Entry(silinenListe).Collection(x => x.Besinler).Load();
+                lboxListeIcerik.DataSource = silinenListe.Besinler.ToList();
             }
 
             catch (Exception)
             {
                 MessageBox.Show("Hatalı işlem");
             }
+        }
+
+        private void btnListeGeriYukle_Click(object sender, EventArgs e)
+        {
+            Liste geriYukle = new Liste()
+            {
+                ListeAdi = silinenListe.ListeAdi,
+                KullaniciId = silinenListe.KullaniciId,
+                Besinler = silinenListe.Besinler,
+            };
+
+            _db.Listeler.Add(geriYukle);
+            _db.SaveChanges();
+
+            MessageBox.Show("Liste geri yüklendi");
         }
     }
 }

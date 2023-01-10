@@ -19,9 +19,8 @@ namespace DiyetisyenProje.PL
         private string _girenKullanici;
         Kullanici GirenKullanici;
         double topKalori = 0;
-        List<ListeBesin> lstBesn;
-        Liste listeAd;
         Liste liste;
+
         public KullaniciGirisForm(DiyetDbContext db, string girenKullanici)
         {
             InitializeComponent();
@@ -35,24 +34,20 @@ namespace DiyetisyenProje.PL
 
             if (GirenKullanici.ListeId > 0)
             {
-                listeAd = _db.Listeler.Find(GirenKullanici.ListeId);
+                liste = _db.Listeler.Find(GirenKullanici.ListeId);
 
-                lstBesn = _db.ListeBesinler
-                    .Include(x => x.Besin)
-                    .Include(x => x.Liste)
-                    .Where(x => x.ListeId == listeAd.Id)
-                    .ToList();
-
-                foreach (var item in lstBesn)
+                if (liste != null)
                 {
-                    lboxListem.Items.Add(item.Besin.Ad);
+                    _db.Entry(liste).Collection(x => x.Besinler).Load();
+
+                    lboxListem.DataSource = liste.Besinler.ToList();
+
+                    lblListeAd.Text = liste.ListeAdi.ToString();
+
+                    topKalori = liste.Besinler.Sum(x => x.Kalori);
+
+                    lblTopKalori.Text += topKalori.ToString("n2");
                 }
-
-                listeAd = _db.Listeler.Find(GirenKullanici.ListeId);
-                lblListeAd.Text = listeAd?.ListeAdi.ToString();
-
-                topKalori = lstBesn.Sum(x => x.Besin.Kalori);
-                lblTopKalori.Text += topKalori.ToString("n2");
             }
         }
 
@@ -76,26 +71,19 @@ namespace DiyetisyenProje.PL
 
             if (listelerimForm.DialogResult == DialogResult.Cancel)
             {
+                lboxListem.DataSource = null;
                 lblTopKalori.Text = "Toplam Kalori : ";
-                lboxListem.Items.Clear();
                 lblListeAd.Text = "Liste Adı : ";
                 if (GirenKullanici.ListeId != 0)
                 {
-                    listeAd = _db.Listeler.Find(GirenKullanici.ListeId);
-                    lblListeAd.Text += listeAd?.ListeAdi.ToString();
-
                     liste = _db.Listeler.Find(GirenKullanici.ListeId);
+                    lblListeAd.Text += liste.ListeAdi.ToString();
 
-                    lstBesn = _db.ListeBesinler
-                       .Include(x => x.Besin)
-                       .Include(x => x.Liste)
-                       .Where(x => x.ListeId == liste.Id)
-                       .ToList();
+                    _db.Entry(liste).Collection(x => x.Besinler).Load();
 
-                    foreach (var item in lstBesn)
-                        lboxListem.Items.Add(item.Besin.Ad);
+                    lboxListem.DataSource = liste.Besinler.ToList();
 
-                    topKalori = lstBesn.Sum(x => x.Besin.Kalori);
+                    topKalori = liste.Besinler.Sum(x => x.Kalori);
                     lblTopKalori.Text += topKalori.ToString("n2");
                 }
             }
@@ -111,24 +99,17 @@ namespace DiyetisyenProje.PL
         {
             if (GirenKullanici.ListeId == 0) return;
 
-            foreach (var item in lboxListem.Items)
-            {
-                Besin besin = _db.Besinler.FirstOrDefault(x => x.Ad == item.ToString());
-                besin.Adet++;
-            }
+            BitenListe bitenListe = new BitenListe();
 
-            BitenListe bitenListe = new BitenListe()
-            {
-                KullaniciId = GirenKullanici.Id,
-                ListeId = listeAd.Id,
-                BitisTarihi = DateTime.Now,
-            };
+            bitenListe.ListeId = liste.Id;
+            bitenListe.BitisTarihi = DateTime.Now;
 
             GirenKullanici.ListeId = 0;
+
             _db.BitenListeler.Add(bitenListe);
             _db.SaveChanges();
 
-            lboxListem.Items.Clear();
+            lboxListem.DataSource = null;
             lblListeAd.Text = "";
             lblTopKalori.Text = "Toplam Kalor : ";
         }
@@ -173,23 +154,14 @@ namespace DiyetisyenProje.PL
 
                 if (GirenKullanici.ListeId > 0)
                 {
-                    listeAd = _db.Listeler.Find(GirenKullanici.ListeId);
+                    liste = _db.Listeler.Find(GirenKullanici.ListeId);
+                    lblListeAd.Text += liste.ListeAdi.ToString();
 
-                    lstBesn = _db.ListeBesinler
-                        .Include(x => x.Besin)
-                        .Include(x => x.Liste)
-                        .Where(x => x.ListeId == listeAd.Id)
-                        .ToList();
+                    _db.Entry(liste).Collection(x => x.Besinler).Load();
 
-                    foreach (var item in lstBesn)
-                    {
-                        lboxListem.Items.Add(item.Besin.Ad);
-                    }
+                    lboxListem.DataSource = liste.Besinler.ToList();
 
-                    listeAd = _db.Listeler.Find(GirenKullanici.ListeId);
-                    lblListeAd.Text = listeAd?.ListeAdi.ToString();
-
-                    topKalori = lstBesn.Sum(x => x.Besin.Kalori);
+                    topKalori = liste.Besinler.Sum(x => x.Kalori);
                     lblTopKalori.Text += topKalori.ToString("n2");
                 }
             }
