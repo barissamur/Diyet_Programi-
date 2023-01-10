@@ -51,7 +51,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Name = "VucutKitleEndeksiForm";
-            this.Text = "VucutKitleEndeksiForm";
+            this.Text = "Vücut Kitle İndeksi Tablosu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

@@ -199,7 +199,7 @@
             this.Controls.Add(this.grpGiris);
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AnaForm";
+            this.Text = "Giriş Sayfası";
             this.grpGiris.ResumeLayout(false);
             this.grpGiris.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

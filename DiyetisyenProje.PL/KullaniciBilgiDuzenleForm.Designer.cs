@@ -314,7 +314,7 @@
             this.Controls.Add(this.lblKullaniciAdi);
             this.Name = "KullaniciBilgiDuzenleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KullaniciBilgiDuzenleForm";
+            this.Text = "Kullanıcı Bilgi Düzenleme ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

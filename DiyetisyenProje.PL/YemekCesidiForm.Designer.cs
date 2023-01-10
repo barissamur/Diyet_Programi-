@@ -103,7 +103,7 @@
             this.Controls.Add(this.dgvEnCokBesin);
             this.Name = "YemekCesidiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "YemekCesidiForm";
+            this.Text = "Favori Yemekler Listesi";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnCokBesin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

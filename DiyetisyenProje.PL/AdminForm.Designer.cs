@@ -599,7 +599,7 @@
             this.Controls.Add(this.tcontrolAdmin);
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminForm";
+            this.Text = "Admin Paneli";
             this.tcontrolAdmin.ResumeLayout(false);
             this.tpageBesinler.ResumeLayout(false);
             this.tpageBesinler.PerformLayout();

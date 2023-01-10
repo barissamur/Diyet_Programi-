@@ -192,7 +192,7 @@
             this.Controls.Add(this.lboxBesinler);
             this.Name = "BesinListeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BesinListeForm";
+            this.Text = "Liste Oluştur";
             this.ResumeLayout(false);
             this.PerformLayout();
 

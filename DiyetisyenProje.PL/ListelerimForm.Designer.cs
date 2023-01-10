@@ -143,7 +143,7 @@
             this.Controls.Add(this.lboxListelerim);
             this.Name = "ListelerimForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ListelerimForm";
+            this.Text = "Listelerim";
             this.ResumeLayout(false);
             this.PerformLayout();
 

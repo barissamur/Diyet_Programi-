@@ -187,7 +187,7 @@
             this.Controls.Add(this.label1);
             this.Name = "GunSonuRaporuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GunSonuRaporuForm";
+            this.Text = "Günlük Raporlar";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

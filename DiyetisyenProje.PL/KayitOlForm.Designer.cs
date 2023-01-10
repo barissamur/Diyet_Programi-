@@ -576,7 +576,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "KayitOlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KayitOlForm";
+            this.Text = "Kayıt Form";
             this.groupBox1.ResumeLayout(false);
             this.tabKulKayit.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

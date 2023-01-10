@@ -44,6 +44,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnKapat = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -222,12 +223,23 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(1035, 686);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(1015, 689);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 15);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "V. 10.0.9.2";
+            this.label9.Size = new System.Drawing.Size(85, 15);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "© Copyright F.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(1029, 669);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 15);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "v2.10.03";
             // 
             // HakkindaForm
             // 
@@ -237,6 +249,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1105, 710);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -253,7 +266,7 @@
             this.Controls.Add(this.label2);
             this.Name = "HakkindaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HakkindaForm";
+            this.Text = "Hakkında";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +288,6 @@
         private Label label14;
         private Button btnKapat;
         private Label label9;
+        private Label label15;
     }
 }
