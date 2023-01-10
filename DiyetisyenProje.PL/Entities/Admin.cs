@@ -13,6 +13,5 @@ namespace DiyetisyenProje.PL.Entities
         public string Soyad { get; set; }
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
-  
     }
 }

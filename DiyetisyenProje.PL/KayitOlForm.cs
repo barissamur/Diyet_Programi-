@@ -83,7 +83,6 @@ namespace DiyetisyenProje.PL
 
                 _db.Kullanicilar.Add(kullanici);
                 _db.SaveChanges();
-                DialogResult dr = DialogResult.OK;
                 Temizle();
             }
             catch (Exception)
@@ -108,9 +107,49 @@ namespace DiyetisyenProje.PL
             }
         }
 
+        private void btnAdminKaydet_Click(object sender, EventArgs e)
+        {
+            if (KullaniciAdiKontrol(txtAdminKulAd.Text))
+            {
+                MessageBox.Show("Bu kullanıcı adı kullanılıyor");
+                return;
+            }
+
+            Admin admin = new Admin()
+            {
+                Ad = txtAdminAd.Text,
+                Soyad = txtAdminSoyad.Text,
+                KullaniciAdi = txtAdminKulAd.Text,
+                Sifre = txtAdminSifre.Text,
+            };
+
+            _db.Adminler.Add(admin);
+            _db.SaveChanges();
+
+            MessageBox.Show("Yeni kayıt oluşturuldu");
+            txtAdminAd.Text = txtAdminSoyad.Text = txtAdminKulAd.Text = txtAdminSifre.Text = "";
+            lblAdminKulKontrol.Text = "-";
+        }
+
+        private void txtAdminKulAd_TextChanged(object sender, EventArgs e)
+        {
+            if (KullaniciAdiKontrol(txtAdminKulAd.Text))
+            {
+                lblAdminKulKontrol.Text = "Bu kullanıcı adı kullanılıyor";
+                lblAdminKulKontrol.ForeColor = Color.Red;
+            }
+
+            else
+            {
+                lblAdminKulKontrol.Text = "Kullanıcı adını alabilirsiniz";
+                lblAdminKulKontrol.ForeColor = Color.Green;
+            }
+        }
+
         private void Temizle()
         {
             txtAd.Text = txtSoyad.Text = txtBoy.Text = txtKilo.Text = txtKulAd.Text = txtSifre.Text = txtBoyunCevre.Text = txtBelCevre.Text = txtKalcaCevre.Text = "";
+            lblKullaniciKontrol.Text = "-";
         }
 
         private bool SifreKontrol(string sifre)
@@ -148,7 +187,5 @@ namespace DiyetisyenProje.PL
             else
                 return false;
         }
-
-
     }
 }

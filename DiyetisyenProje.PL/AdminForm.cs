@@ -46,24 +46,24 @@ namespace DiyetisyenProje.PL
                 Kategori = x.BesinKategori.Ad
             }).ToList();
 
-            //dgvKullanicilar.DataSource = _db.Kullanicilar
-            //    .Select(x =>
-            //new
-            //{
-            //    x.Id,
-            //    x.Ad,
-            //    x.Soyad,
-            //    x.KullaniciAdi,
-            //    x.Sifre,
-            //    x.Cinsiyet,
-            //    x.Kilo,
-            //    Yas = x.Yas(),
-            //    x.BoyunCevresi,
-            //    x.BelCevresi,
-            //    x.KalcaCevresi,
-            //    x.Boy,
-            //    Liste = _db.Listeler.FirstOrDefault(y => y.Id == x.ListeId).ListeAdi
-            //}).ToList();
+            dgvKullanicilar.DataSource = _db.Kullanicilar
+                .Select(x =>
+            new
+            {
+                x.Id,
+                x.Ad,
+                x.Soyad,
+                x.KullaniciAdi,
+                x.Sifre,
+                x.Cinsiyet,
+                x.Kilo,
+                Yas = x.Yas(),
+                x.BoyunCevresi,
+                x.BelCevresi,
+                x.KalcaCevresi,
+                x.Boy,
+                Liste = _db.Listeler.FirstOrDefault(y => y.Id == x.ListeId).ListeAdi
+            }).ToList();
 
             lblAdminAdSoyad.Text = "Admin: " + admin.Ad + " " + admin.Soyad + " (" + admin.KullaniciAdi + ")";
         }
@@ -220,24 +220,24 @@ namespace DiyetisyenProje.PL
 
                 kullaniciIndex = seciliKullaniciId;
 
-           //     dgvKullanicilar.DataSource = _db.Kullanicilar
-           //    .Select(x =>
-           //new
-           //{
-           //    x.Id,
-           //    x.Ad,
-           //    x.Soyad,
-           //    x.KullaniciAdi,
-           //    x.Sifre,
-           //    x.Cinsiyet,
-           //    x.Kilo,
-           //    Yas = x.Yas(),
-           //    x.BoyunCevresi,
-           //    x.BelCevresi,
-           //    x.KalcaCevresi,
-           //    x.Boy,
-           //    Liste = _db.Listeler.FirstOrDefault(y => y.Id == x.ListeId).ListeAdi
-           //}).ToList();
+                dgvKullanicilar.DataSource = _db.Kullanicilar
+               .Select(x =>
+           new
+           {
+               x.Id,
+               x.Ad,
+               x.Soyad,
+               x.KullaniciAdi,
+               x.Sifre,
+               x.Cinsiyet,
+               x.Kilo,
+               Yas = x.Yas(),
+               x.BoyunCevresi,
+               x.BelCevresi,
+               x.KalcaCevresi,
+               x.Boy,
+               Liste = _db.Listeler.FirstOrDefault(y => y.Id == x.ListeId).ListeAdi
+           }).ToList();
 
                 dgvKullanicilar.Rows[kullaniciIndex - 1].Selected = true;
                 dgvKullanicilar.Rows[kullaniciIndex - 1].Cells[0].Selected = true;
@@ -281,24 +281,24 @@ namespace DiyetisyenProje.PL
                 _db.Kullanicilar.Remove(seciliKullanici);
                 _db.SaveChanges();
 
-           //     dgvKullanicilar.DataSource = _db.Kullanicilar
-           //    .Select(x =>
-           //new
-           //{
-           //    x.Id,
-           //    x.Ad,
-           //    x.Soyad,
-           //    x.KullaniciAdi,
-           //    x.Sifre,
-           //    x.Cinsiyet,
-           //    x.Kilo,
-           //    Yas = x.Yas(),
-           //    x.BoyunCevresi,
-           //    x.BelCevresi,
-           //    x.KalcaCevresi,
-           //    x.Boy,
-           //    Liste = _db.Listeler.FirstOrDefault(y => y.Id == x.ListeId).ListeAdi
-           //}).ToList();
+                dgvKullanicilar.DataSource = _db.Kullanicilar
+               .Select(x =>
+           new
+           {
+               x.Id,
+               x.Ad,
+               x.Soyad,
+               x.KullaniciAdi,
+               x.Sifre,
+               x.Cinsiyet,
+               x.Kilo,
+               Yas = x.Yas(),
+               x.BoyunCevresi,
+               x.BelCevresi,
+               x.KalcaCevresi,
+               x.Boy,
+               Liste = _db.Listeler.FirstOrDefault(y => y.Id == x.ListeId).ListeAdi
+           }).ToList();
             }
 
             catch (Exception)
