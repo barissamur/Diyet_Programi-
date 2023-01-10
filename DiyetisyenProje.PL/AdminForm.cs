@@ -140,7 +140,7 @@ namespace DiyetisyenProje.PL
                Kategori = x.BesinKategori.Ad
            }).ToList();
 
-                dgvBesinler.Rows[besinIndex - 1].Selected = true;
+                //dgvBesinler.Rows[besinIndex - 1].Selected = true;
                 dgvBesinler.Rows[besinIndex - 1].Cells[0].Selected = true;
             }
 

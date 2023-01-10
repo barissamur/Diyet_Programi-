@@ -50,7 +50,11 @@ namespace DiyetisyenProje.PL
                 kullaniciGiris.ShowDialog();
             }
 
-            else return;
+            else
+            {
+                MessageBox.Show("Hatalı giriş yaptınız");
+                return;
+            }
         }
 
         private void llKayitOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
