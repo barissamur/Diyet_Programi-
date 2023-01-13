@@ -106,6 +106,9 @@ namespace DiyetisyenProje.PL
 
             GirenKullanici.ListeId = 0;
 
+            foreach (Besin item in lboxListem.Items)
+                item.Adet++;
+
             _db.BitenListeler.Add(bitenListe);
             _db.SaveChanges();
 
